@@ -1,0 +1,131 @@
+body {
+  overflow-x: hidden;
+}
+
+#landing-page {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 2fr 1fr;
+  grid-template-areas:
+    "title image"
+    "button image";
+}
+
+#landing-page img {
+  grid-area: image;
+  height: 100%;
+}
+
+#landing-page #logo-container {
+  grid-area: title;
+
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+#landing-page #logo-container h1 {
+  font-size: 16rem;
+  font-weight: normal;
+  color: var(--primary-color);
+  margin-bottom: 0.3rem;
+  font-family: var(--logo-font);
+}
+
+#landing-page #logo-container span {
+  display: block;
+  font-size: 2.6rem;
+  color: var(--secondary-color);
+  font-family: var(--text-font);
+}
+
+#landing-page #button-container {
+  grid-area: button;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#landing-page #button-container a {
+  display: inline-block;
+  margin: 3rem 2rem 0rem 0rem;
+  padding: 0.9rem 4.5rem;
+  border-radius: 0.8rem;
+
+  font-size: 2rem;
+  font-family: var(--text-font);
+  text-align: center;
+
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  border: 0.3rem solid var(--primary-color);
+
+  transition: background-color 0.2s, color 0.2s;
+}
+#landing-page #button-container a:last-child {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+}
+#landing-page #button-container a:hover {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+}
+#landing-page #button-container a:last-child:hover {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+}
+
+@media (max-width: 700px) {
+  #landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  #landing-page #logo-container {
+    top: 0rem;
+  }
+
+  #landing-page #logo-container h1 {
+    text-align: center;
+    font-size: 8rem;
+    margin: 0;
+  }
+
+  #landing-page #logo-container span {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+  }
+
+  #landing-page #button-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 5rem;
+  }
+
+  #landing-page #button-container a {
+    display: block;
+    font-size: 1rem;
+    border-radius: 0.4rem;
+    border-width: 0.2rem;
+    margin: 1rem 0 0 0;
+    padding: 0.7rem;
+    width: 100%;
+  }
+
+  #landing-page img {
+    position: relative;
+    content: url(../assets/MobileLandingIcon.svg);
+
+    height: 45%;
+  }
+}
