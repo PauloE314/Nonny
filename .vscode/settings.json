@@ -1,9 +1,0 @@
-{
-  "python.pythonPath": "venv\\Scripts\\python.exe",
-  "[html]": {
-    "editor.formatOnSave": false
-  },
-  "cSpell.words": [
-    "Nonny"
-  ]
-}
