@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.ibb.co/34Sy4kf/Logo.png" style="border-radius: 15px; max-width: 350px; width: 100%">
+  <img src="https://i.ibb.co/34Sy4kf/Logo.png" style="border-radius: 15px; max-width: 250px; width: 100%">
 </p><br>
 
 Nonny é uma plataforma de anotações de atividades online que visa a simplicidade e objetividade. Trata-se de uma forma segura e simples de guardar listas de "coisas a fazer" para que não seja necessário gastar cadernos e mais cadernos nisso.
