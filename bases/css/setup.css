@@ -1,7 +1,7 @@
 :root {
   font-size: 80%;
 
-  --bg-color: #f1f1f1;
+  --bg-color: #ffffff;
   --dark-color: #010101;
   --primary-color: #8b8bae;
   --secondary-color: #48504f;
@@ -17,7 +17,7 @@
   box-sizing: border-box !important;
   list-style: none;
   outline: none;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--text-font), serif;
   text-decoration: none;
   color: var(--secondary-color);
 }

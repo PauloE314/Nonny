@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block links %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div>
+    <section id="landing-page" >
+         <div id="logo-container">
+            <h1>Nonny</h1>
+            <span id="subtitle">O seu bloco de notas virtual</span>
+        </div>
+        <img id="landing-image" src="{% static 'assets/LandingIcon.svg' %}" />
+        <div id="button-container">
+            <a href="#">Criar</a>
+            <a href="#">Explorar</a>
+        </div> 
+    </section>
+
+    <section id="about">
+        <h2 class="title">Simplicidade e <span>agilidade</span></h2>
+        <div class="card-container">
+            <div class="card">
+                <span>Crie anotações</span>
+                <i class="fas fa-feather-alt icon"></i>
+            </div>
+            <div class="card">
+                <span>Customize seu ambiente</span>
+                <i class="fas fa-cog icon"></i>
+            </div>
+            <div class="card">
+                <span>Leia anotações e lembretes</span>
+                <i class="far fa-lightbulb icon"></i>
+            </div>
+        </div>
+        <h3>Com nonny você pode planejar e anotar de forma simples, fácil e segura</h3>
+    </section>
+
+    <footer>
+        <ul id="contact-list">
+            <li>
+                <a href="mailto:pauloeduardodelima155@gmail.com" target="_blank">
+                    <i class="fas fa-envelope icon"></i>
+                    <span>Gmail</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/PauloE314/" target="_blank">
+                    <i class="fab fa-github icon"></i>
+                    <span>Github</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/paulo-louren%C3%A7o-178580197/" target="_blank">
+                    <i class="fab fa-linkedin icon"></i>
+                    <span>Linkedin</span>
+                </a>
+            </li>
+        </ul>
+        <div id="author">
+            <h3>PAULO EDUARDO</h3>
+            <span>2020</span>
+        </div>
+    </footer>
+</div>
+
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock %}
