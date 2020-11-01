@@ -6,6 +6,8 @@ Nonny é uma plataforma de anotações de atividades online que visa a simplicid
 
 <div style="display: flex; flex-wrap: wrap; justify-content: center">
     <img src="https://i.ibb.co/Fn5GpQX/Landing.png" style="margin-bottom: 10px; width: 100%; max-width: 400px; margin-right: 10px">
+    <img src="https://i.ibb.co/QQpfkJt/Example.jpg" style="margin-bottom: 10px; width: 100%; max-width: 400px; margin-right: 10px">
+    
 </div>
     <!-- <img src="https://i.ibb.co/9H6nM57/Landing-mobile.png"> -->
 <hr>
