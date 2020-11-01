@@ -9,15 +9,21 @@ body {
 
   display: grid;
 
-  grid-template-columns: 64% max-content;
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: 2fr 1fr;
   grid-template-areas:
     "title image"
     "button image";
 }
 
-#landing-page img {
+#landing-page #image-container {
   grid-area: image;
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+#landing-page img {
   height: 100%;
 }
 
@@ -33,7 +39,7 @@ body {
 }
 
 #landing-page #logo-container h1 {
-  font-size: 16rem;
+  font-size: 15rem;
   font-weight: normal;
   color: var(--primary-color);
   margin-bottom: 0.3rem;
@@ -42,7 +48,7 @@ body {
 
 #landing-page #logo-container span {
   display: block;
-  font-size: 2.6rem;
+  font-size: 2.4rem;
   color: var(--secondary-color);
   font-family: var(--text-font);
 }
@@ -58,7 +64,7 @@ body {
 #landing-page #button-container a {
   display: inline-block;
   margin: 3rem 2rem 0rem 0rem;
-  padding: 0.9rem 4.5rem;
+  padding: 0.9rem 3.8rem;
   border-radius: 0.8rem;
 
   font-size: 2rem;
@@ -86,7 +92,6 @@ body {
 
 /* About logic */
 #about {
-  min-height: 100vh;
   width: 100vw;
 
   padding-top: 5rem;
@@ -96,7 +101,7 @@ body {
   flex-direction: column;
 }
 #about h2 {
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 #about h2 span {
   color: var(--primary-color);
@@ -145,7 +150,7 @@ body {
   font-family: var(--text-font);
   font-size: 1.6rem;
   font-weight: normal;
-  margin: 3rem 0rem;
+  margin: 3rem 0rem 6rem 0rem;
   max-width: 50%;
   text-align: center;
 }
@@ -190,6 +195,9 @@ footer #contact-list li span,
 footer #contact-list li .icon {
   color: white;
 }
+footer #contact-list li span {
+  font-size: 1.4rem;
+}
 footer #author {
   text-align: center;
   margin-top: 3rem;
@@ -229,6 +237,11 @@ footer #author span {
     font-size: 1.3rem;
     margin-bottom: 2rem;
   }
+  #landing-page #image-container {
+    justify-content: center;
+    position: relative;
+    height: 45%;
+  }
   #landing-page #button-container {
     flex-direction: column;
     justify-content: center;
@@ -247,8 +260,6 @@ footer #author span {
   }
   #landing-page img {
     position: relative;
-
-    height: 45%;
   }
 
   /* About */
