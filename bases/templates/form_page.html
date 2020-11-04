@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block links %}
+    <link rel="stylesheet" href="{% static 'css/form_page.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div id="form-page">
+  <img src="{% static 'assets/Header light.svg' %}" class="header-logo" />
+  <main class="round-container">
+    <h1 class="title">{% block title %}{% endblock %}</h1>
+    {% block form %}{% endblock %}
+    {% block additional %}{% endblock %}
+  </main>
+  <img src="{% static 'assets/Bottom light.svg' %}" class="bottom-logo" />
+</div>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'js/login.js' %}"></script>
+{% endblock %}

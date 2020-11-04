@@ -26,7 +26,7 @@ body {
   background-color: var(--bg-color);
 }
 
-/* width */
+/* Scroll */
 body::-webkit-scrollbar {
   width: 1rem;
 }
@@ -41,6 +41,21 @@ body::-webkit-scrollbar-thumb {
 }
 body::-webkit-scrollbar-thumb:active {
   background: #63637e;
+}
+
+/* General */
+button {
+  transition: filter 0.2s;
+}
+button.disabled {
+  filter: brightness(1.15) saturate(0);
+}
+
+/* Media */
+@media (min-width: 00px) {
+  body::-webkit-scrollbar {
+    width: 0.5rem;
+  }
 }
 
 @media (min-width: 1600px) {

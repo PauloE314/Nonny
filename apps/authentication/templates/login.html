@@ -1,12 +1,26 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nonny</title>
-</head>
-<body>
-  <h1>Login</h1>
+{% extends 'form_page.html' %}
+{% load static %}
 
-</body>
-</html>
+{% block links %}
+    <link rel="stylesheet" href="{% static 'css/form_page.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+{% endblock %}
+
+
+{% block title %}Login{% endblock %}
+
+{% block form %}
+<form id="login-form" method="post" action="/">
+  {% csrf_token %}
+  <input class="input" id="username" type="text" name="username" required placeholder="Usuário">
+  <input class="input" id="password" type="password" name="password" required placeholder="Senha">
+  <button class="submit-button disabled" id="submit" type="submit" >Confirmar</button>
+</form>
+{% endblock %}
+
+{% block additional %}
+<div id="footer-message">
+  <span>Você é novo?</span>
+  <a href="{% url 'sign_up' %}">Crie uma nova conta</a>
+</div>
+{% endblock %}

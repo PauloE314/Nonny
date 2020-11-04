@@ -1,0 +1,75 @@
+#form-page {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  min-height: 100vh;
+  padding: 3rem;
+
+  background-color: var(--primary-color);
+}
+
+/* Main container */
+#form-page main {
+  width: 30%;
+  min-width: 35rem;
+  max-width: 45rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  background-color: var(--bg-color);
+  padding: 2rem 3rem;
+}
+
+/* Title */
+#form-page h1 {
+  color: var(--primary-color);
+  margin: 3rem 0rem;
+}
+
+/* Login Form */
+#form-page form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+  flex-direction: column;
+}
+#form-page form button[type="submit"] {
+  margin-top: 2rem;
+}
+
+/* Media points */
+@media (max-width: 1100px) {
+  #form-page main {
+    width: 30%;
+    min-width: 30rem;
+    max-width: 40rem;
+    padding: 1rem 3rem;
+  }
+}
+@media (max-width: 700px) {
+  #form-page {
+    padding: 1rem;
+  }
+  #form-page main {
+    width: 100%;
+    max-width: 35rem;
+    min-width: 0rem;
+    padding: 1rem 2rem;
+  }
+
+  #form-page form button[type="submit"] {
+    margin-top: 0rem;
+  }
+
+  #form-page h1 {
+    font-size: 4rem;
+  }
+}

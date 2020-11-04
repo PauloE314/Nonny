@@ -1,12 +1,29 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nonny</title>
-</head>
-<body>
-  <h1>Sign up</h1>
+{% extends 'form_page.html' %}
+{% load static %}
 
-</body>
-</html>
+{% block links %}
+    <link rel="stylesheet" href="{% static 'css/form_page.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/sign_up.css' %}" />
+{% endblock %}
+
+
+{% block title %}Cadastro{% endblock %}
+
+{% block form %}
+<form id="sign-form" method="post" action="/">
+  {% csrf_token %}
+  <label class="label" for="username">Nome de usuário</label>
+  <input class="input" id="username" type="text" name="username" required >
+
+  <label class="label" for="email">Email</label>
+  <input class="input" id="email" type="email" name="email" required >
+
+  <label class="label" for="password">Senha</label>
+  <input class="input" id="password" type="password" name="password" required >
+
+  <label class="label" for="confirm-password">Confirmar senha</label>
+  <input class="input" id="confirm-password" type="password" name="password" required >
+  
+  <button class="submit-button disabled" id="submit" type="submit" >Confirmar</button>
+</form>
+{% endblock %}
