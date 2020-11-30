@@ -4,7 +4,7 @@ from django.utils.decorators import method_decorator
 from django.shortcuts import render
 from django.views import View
 
-@method_decorator(login_required, name='get')
 class SecretView(View):
+    @method_decorator(login_required)
     def get(self, request):
         return HttpResponse('result')

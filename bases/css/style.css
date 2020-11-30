@@ -27,6 +27,8 @@
 
 /* Forms */
 .input {
+  position: relative;
+  top: 0;
   background-color: var(--background-color);
   box-shadow: 0rem 0.15rem 0.5rem 0.01rem rgb(72, 80, 79, 0.3);
   border: none;
@@ -37,13 +39,15 @@
   margin-bottom: 1.8rem;
   width: 100%;
 
-  transition: background-color 0.2s, color 0.2s;
+  transition: background-color 0.2s, color 0.2s, top 0.2s, box-shadow 0.2s;
 }
 .input::placeholder {
   opacity: 0.4;
   transition: color 0.2s, opacity 0.2s;
 }
 .input:focus {
+  top: -0.5rem;
+  box-shadow: 0rem 0.7rem 0.3rem 0rem rgb(72, 80, 79, 0.4);
   color: var(--bg-color);
   background-color: #b9b9d6 !important;
 }
@@ -71,7 +75,7 @@
   width: 100%;
   text-align: left;
   margin-bottom: 0.8rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: var(--primary-color);
 }
 

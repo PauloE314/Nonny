@@ -4,7 +4,9 @@
   --bg-color: #ffffff;
   --dark-color: #010101;
   --primary-color: #8b8bae;
+  --primary-color-dark: #696983;
   --secondary-color: #48504f;
+  --secondary-color-dark: #383f3e;
 
   --text-font: "Arvo";
   --logo-font: "Yellowtail";
@@ -24,6 +26,7 @@
 
 body {
   background-color: var(--bg-color);
+  overflow-x: hidden;
 }
 
 /* Scroll */

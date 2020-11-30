@@ -18,12 +18,33 @@
   <label class="label" for="email">Email</label>
   <input class="input" id="email" type="email" name="email" required >
 
+  <label class="label" for="fake-image">Foto de perfil</label>
+  <label id="fake-image" for="profile-image">
+    <i class="fas fa-upload icon"></i>
+
+  </label>
+  <input id="profile-image" type="file" name="image" accept="image/*" hidden>
+
   <label class="label" for="password">Senha</label>
-  <input class="input" id="password" type="password" name="password" required >
+  <div class="password-row">
+    <input class="input" id="password" type="password" name="password" required >
+    <button id="see-password" type="button">
+      <i class="fas fa-eye icon"></i>
+    </button>
+  </div>
 
   <label class="label" for="confirm-password">Confirmar senha</label>
-  <input class="input" id="confirm-password" type="password" name="password" required >
+  <div class="password-row">
+    <input class="input" id="confirm-password" type="password" name="password" required >
+    <button id="see-confirm-password" type="button">
+      <i class="fas fa-eye icon"></i>
+    </button>
+  </div>
   
   <button class="submit-button disabled" id="submit" type="submit" >Confirmar</button>
 </form>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'js/sign_up.js' %}"></script>
 {% endblock %}

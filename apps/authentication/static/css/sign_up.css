@@ -3,3 +3,107 @@
   min-width: 40rem;
   max-width: 50rem;
 }
+
+/* Fake image */
+#form-page main #sign-form #fake-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid rgba(139, 139, 174, 0.3);
+  cursor: pointer;
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+  width: 100%;
+  height: 22rem;
+  z-index: 99 !important;
+}
+#form-page main #sign-form #fake-image.active {
+  border: none;
+}
+#form-page main #sign-form #fake-image .icon {
+  font-size: 5rem;
+}
+#form-page main #sign-form #fake-image #image-data {
+  position: relative;
+  transition: opacity 0.2s;
+  height: 100%;
+  animation: AppearAnimation linear 0.2s;
+}
+#form-page main #sign-form #fake-image #image-data img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.8rem;
+  object-fit: cover;
+}
+
+#form-page main #sign-form #fake-image #image-data button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 0rem 0.6rem 0rem 1rem;
+  padding: 0.8rem 1rem;
+  transition: background-color 0.2s;
+}
+#form-page main #sign-form #fake-image #image-data button:hover {
+  background-color: red;
+}
+#form-page main #sign-form #fake-image #image-data button .icon {
+  font-size: 1.8rem;
+  color: red;
+  transition: color 0.2s;
+}
+#form-page main #sign-form #fake-image #image-data button:hover .icon {
+  color: white;
+}
+
+/* Password rows */
+#form-page main #sign-form .password-row {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1.8rem;
+}
+#form-page main #sign-form .password-row input {
+  margin-bottom: 0;
+  margin-right: 0.5rem;
+}
+#form-page main #sign-form .password-row button {
+  position: relative;
+  background-color: var(--background-color);
+  box-shadow: 0rem 0.15rem 0.5rem 0.01rem rgb(72, 80, 79, 0.3);
+  border: none;
+  border-radius: 0.7rem;
+  padding: 1rem;
+  cursor: pointer;
+
+  transition: background-color 0.2s, color 0.2s;
+}
+#form-page main #sign-form .password-row button .icon {
+  font-size: 1.8rem;
+}
+#form-page main #sign-form .password-row button.active {
+  background-color: var(--primary-color);
+}
+#form-page main #sign-form .password-row button.active .icon {
+  color: white !important;
+}
+
+@keyframes AppearAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 700px) {
+  #form-page main {
+    width: 100%;
+    max-width: 35rem;
+    min-width: 0rem;
+    padding: 1rem 2rem;
+  }
+}
