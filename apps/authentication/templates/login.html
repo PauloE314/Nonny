@@ -9,8 +9,9 @@
 
 {% block title %}Login{% endblock %}
 
-{% block form %}
-<form id="login-form" method="post" action="/">
+{% block page_form %}
+
+<form id="login-form" method="post" action="">
   {% csrf_token %}
   <input class="input" id="username" type="text" name="username" required placeholder="Usuário">
   <input class="input" id="password" type="password" name="password" required placeholder="Senha">
