@@ -1,31 +1,48 @@
+const form = document.getElementById("sign-form");
 const username = document.getElementById("username");
-const email = document.getElementById("email");
 const image = document.getElementById("profile-image");
 const fakeImage = document.getElementById("fake-image");
 const password = document.getElementById("password");
 const confirmPassword = document.getElementById("confirm-password");
 
+const passwordRegex = new RegExp(password.getAttribute('pattern'));
+
 const showPassword = document.getElementById("see-password");
 const showConfirmPassword = document.getElementById("see-confirm-password");
 const submitButton = document.getElementById("submit");
 
+var isFormVality = false;
+
 function handleInputChange() {
+  // Checks form vality
   if (
-    username.value === "" ||
-    email.value === "" ||
-    password.value === "" ||
-    confirmPassword.value === "" ||
-    password.value !== confirmPassword.value
+    username.checkValidity() &&
+    password.value != '' &&
+    confirmPassword.value != '' &&
+    passwordRegex.test(password.value) &&
+    password.value == confirmPassword.value
   ) {
-    submitButton.classList.add("disabled");
-  } else {
-    submitButton.classList.remove("disabled");
+    password.setCustomValidity("");
+
+    submitButton.classList.add("enabled");
+    submitButton.classList.remove('disabled');
   }
+  
+  // Error case
+  else {
+     // Password logic
+     if (password.value !== confirmPassword.value) 
+      password.setCustomValidity("Senhas não coincidem");
+    else
+      password.setCustomValidity("");
+      
+    submitButton.classList.remove('enabled');
+    submitButton.classList.add("disabled");
+  }
+
 }
 
 function handleSeePassword(origin, target) {
-  console.log(target);
-
   if (origin.classList.contains("active")) {
     origin.classList.remove("active");
     target.type = "password";
@@ -63,13 +80,12 @@ function handleRemoveImage() {
   }, 200);
 }
 
+
 username.oninput = handleInputChange;
-email.oninput = handleInputChange;
 password.oninput = handleInputChange;
 confirmPassword.oninput = handleInputChange;
+image.onchange = handleImageUpload;
 
 showPassword.onclick = () => handleSeePassword(showPassword, password);
 showConfirmPassword.onclick = () =>
   handleSeePassword(showConfirmPassword, confirmPassword);
-
-image.onchange = handleImageUpload;

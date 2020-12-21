@@ -5,8 +5,8 @@
 /* Error message */
 .error-container {
   animation: ErrorMessageAnimation linear 1s;
-  visibility: hidden;
-  position: absolute;
+  overflow: hidden;
+  transition: all 0.5s;
 }
 
 

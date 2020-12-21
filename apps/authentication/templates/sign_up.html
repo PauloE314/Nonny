@@ -10,30 +10,35 @@
 {% block title %}Cadastro{% endblock %}
 
 {% block page_form %}
-<form id="sign-form" method="post" action="/">
+<form id="sign-form" method="post">
   {% csrf_token %}
-  <label class="label" for="username">Nome de usuário</label>
-  <input class="input" id="username" type="text" name="username" required >
+  <label class="label" for="username">
+    Nome de usuário: *  <small>Deve conter pelo menos 5 caracteres</small>
+  </label>
+  <input class="input" id="username" type="text" name="username" title="lorem" required pattern="^.{5,}$">
 
-  <label class="label" for="email">Email</label>
-  <input class="input" id="email" type="email" name="email" required >
-
-  <label class="label" for="fake-image">Foto de perfil</label>
+  <label class="label" for="fake-image">
+    Foto de perfil
+  </label>
   <label id="fake-image" for="profile-image">
     <i class="fas fa-upload icon"></i>
 
   </label>
   <input id="profile-image" type="file" name="image" accept="image/*" hidden>
 
-  <label class="label" for="password">Senha</label>
+  <label class="label" for="password">
+    Senha: * <small>Deve conter pelo menos 4 caracteres incluindo números</small>
+  </label>
   <div class="password-row">
-    <input class="input" id="password" type="password" name="password" required >
+    <input class="input" id="password" type="password" name="password" required pattern="^.{4,}$">
     <button id="see-password" type="button">
       <i class="fas fa-eye icon"></i>
     </button>
   </div>
 
-  <label class="label" for="confirm-password">Confirmar senha</label>
+  <label class="label" for="confirm-password">
+    Confirmar senha: *
+  </label>
   <div class="password-row">
     <input class="input" id="confirm-password" type="password" name="password" required >
     <button id="see-confirm-password" type="button">

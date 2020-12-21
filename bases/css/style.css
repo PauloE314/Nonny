@@ -65,10 +65,18 @@
   cursor: pointer;
   font-size: 1.5rem;
 
-  transition: filter 0.1s;
+  transition: filter 0.1s, background-color 0.1s;
 }
 .submit-button:active {
   filter: brightness(0.75);
+}
+.submit-button.enabled:hover {
+  background-color: var(--success-color);
+  filter: none;
+}
+.submit-button.disabled:hover {
+  background-color: var(--danger-color);
+  filter: none;
 }
 .label {
   display: block;
@@ -77,6 +85,10 @@
   margin-bottom: 0.8rem;
   font-size: 1.2rem;
   color: var(--primary-color);
+}
+.label small {
+  opacity: 0.5;
+  float: right;
 }
 .error-container {
   width: 100%;
