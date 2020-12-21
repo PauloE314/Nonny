@@ -2,6 +2,14 @@
   color: var(--primary-color);
 }
 
+/* Error message */
+.error-container {
+  animation: ErrorMessageAnimation linear 1s;
+  visibility: hidden;
+  position: absolute;
+}
+
+
 /* Media points */
 @media (max-width: 1100px) {
   #login-form input,

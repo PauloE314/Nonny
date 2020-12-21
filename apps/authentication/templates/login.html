@@ -11,7 +11,13 @@
 
 {% block page_form %}
 
-<form id="login-form" method="post" action="">
+{% if form.errors %}
+  <div id="error-container" class="error-container">
+    <span class="error-message">Usuário ou senha inválidos</span>
+  </div>
+{% endif %}
+
+<form id="login-form" method="post">
   {% csrf_token %}
   <input class="input" id="username" type="text" name="username" required placeholder="Usuário">
   <input class="input" id="password" type="password" name="password" required placeholder="Senha">

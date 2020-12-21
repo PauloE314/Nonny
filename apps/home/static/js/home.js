@@ -12,6 +12,4 @@ function handleScreenSize(width) {
   landingImage.src = `static/assets/${
     width <= 700 ? "MobileLandingIcon.svg" : "LandingIcon.svg"
   } `;
-
-  console.log(width);
 }

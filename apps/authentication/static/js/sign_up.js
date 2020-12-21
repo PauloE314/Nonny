@@ -63,10 +63,10 @@ function handleRemoveImage() {
   }, 200);
 }
 
-username.onchange = handleInputChange;
-email.onchange = handleInputChange;
-password.onchange = handleInputChange;
-confirmPassword.onchange = handleInputChange;
+username.oninput = handleInputChange;
+email.oninput = handleInputChange;
+password.oninput = handleInputChange;
+confirmPassword.oninput = handleInputChange;
 
 showPassword.onclick = () => handleSeePassword(showPassword, password);
 showConfirmPassword.onclick = () =>
