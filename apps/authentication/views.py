@@ -4,6 +4,7 @@ from django.contrib.auth import login
 from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView as _LoginView
 from .forms import LoginForm, RegisterForm
+from .models import ProfileImage
 
 
 class LoginView(_LoginView):
@@ -30,20 +31,22 @@ class SignUpView(View):
 
   def post(self, request, *args, **kwargs):
     """
-    Creastes a new user
+    Creates a new user
     """
     form = RegisterForm(request.POST)
+    image = request.FILES.get('image')
 
     if (form.is_valid()):
-      print("Valido")
+      username = form.cleaned_data.get('username')
+      password = form.cleaned_data.get('password2')
 
-      return render(request, 'sign_up.html')
+      user = User.objects.create(username=username, password=password)
+      profileImage = ProfileImage.objects.create(user=user, image=image)
 
-
-      # user = User.objects.create(username, password=password)
       # login(request, user)
 
-      # return redirect('/app')
+      return redirect('/app')
     
     else:
-      return render(request, 'sign_up.html')
+      print(form.errors)
+      return render(request, 'sign_up.html', { 'form': form })

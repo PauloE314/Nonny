@@ -1,19 +1,26 @@
 {% extends 'base.html' %}
+
+<!-- Static -->
 {% load static %}
 
+<!-- Link list -->
 {% block links %}
-    <link rel="stylesheet" href="{% static 'css/form_page.css' %}" />
+<link rel="stylesheet" href="{% static 'css/form_page.css' %}" />
 {% endblock %}
 
+<!-- Content -->
 {% block content %}
 <div id="form-page">
   <img src="{% static 'assets/Header light.svg' %}" class="header-logo" />
   <main class="round-container">
     <h1 class="title">{% block title %}{% endblock %}</h1>
+
+    <!-- Form -->
     {% block page_form %}{% endblock %}
+
+    <!-- Additional data -->
     {% block additional %}{% endblock %}
   </main>
   <img src="{% static 'assets/Bottom light.svg' %}" class="bottom-logo" />
 </div>
 {% endblock %}
-

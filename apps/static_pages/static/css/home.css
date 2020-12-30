@@ -255,11 +255,11 @@ footer #author span {
   }
   #landing-page #button-container a {
     display: block;
-    font-size: 1rem;
+    font-size: 1.3rem;
     border-radius: 0.4rem;
     border-width: 0.2rem;
     margin: 1rem 0 0 0;
-    padding: 0.7rem;
+    padding: 1rem;
     width: 100%;
     max-width: 25rem;
   }
@@ -273,23 +273,28 @@ footer #author span {
     max-width: 20rem;
     margin-bottom: 1rem;
   }
-  #about .card {
-    width: 12rem;
-    margin: 1rem;
-    margin-right: 0rem;
+  #about .card-container {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 1.6rem;
   }
-  #about .card:first-child {
-    margin-left: 0;
+  #about .card {
+    width: 75%;
+    margin: 1rem 0;
+    margin-right: 0rem;
+    padding: 3rem 1rem;
   }
   #about .card span {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
   #about .card .icon {
     font-size: 4rem;
   }
   #about h3 {
-    max-width: 90%;
-    font-size: 1rem;
+    max-width: 80%;
+    font-size: 1.2rem;
   }
 
   /* Footer */

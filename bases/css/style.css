@@ -25,87 +25,6 @@
   font-size: 3rem;
 }
 
-/* Forms */
-.input {
-  position: relative;
-  top: 0;
-  background-color: var(--background-color);
-  box-shadow: 0rem 0.15rem 0.5rem 0.01rem rgb(72, 80, 79, 0.3);
-  border: none;
-  border-radius: 0.7rem;
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-
-  margin-bottom: 1.8rem;
-  width: 100%;
-
-  transition: background-color 0.2s, color 0.2s, top 0.2s, box-shadow 0.2s;
-}
-.input::placeholder {
-  opacity: 0.4;
-  transition: color 0.2s, opacity 0.2s;
-}
-.input:focus {
-  top: -0.5rem;
-  box-shadow: 0rem 0.7rem 0.3rem 0rem rgb(72, 80, 79, 0.4);
-  color: var(--bg-color);
-  background-color: #b9b9d6 !important;
-}
-.input:focus::placeholder {
-  opacity: 0.7;
-  color: var(--bg-color);
-}
-.submit-button {
-  background-color: var(--primary-color);
-  width: 100%;
-  padding: 1rem;
-  border-radius: 0.8rem;
-  border: none;
-  color: var(--bg-color);
-  cursor: pointer;
-  font-size: 1.5rem;
-
-  transition: filter 0.1s, background-color 0.1s;
-}
-.submit-button:active {
-  filter: brightness(0.75);
-}
-.submit-button.enabled:hover {
-  background-color: var(--success-color);
-  filter: none;
-}
-.submit-button.disabled:hover {
-  background-color: var(--danger-color);
-  filter: none;
-}
-.label {
-  display: block;
-  width: 100%;
-  text-align: left;
-  margin-bottom: 0.8rem;
-  font-size: 1.2rem;
-  color: var(--primary-color);
-}
-.label small {
-  opacity: 0.5;
-  float: right;
-}
-.error-container {
-  width: 100%;
-  padding: 1.8rem;
-  background-color: #ffe0e0;
-  margin-bottom: 2.3rem;
-  margin-top: -1rem;
-  border-radius: 0.8rem;
-
-  text-align: center;
-  box-shadow: 0rem 0.15rem 0.3rem 0.01rem rgba(141, 111, 111, 0.3);
-}
-.error-container .error-message {
-  color:  #f79f9f;
-  font-size: 1.2rem;
-}
-
 /* Logos */
 .header-logo {
   position: absolute;
@@ -125,26 +44,6 @@
   .bottom-logo,
   .header-logo {
     width: 8rem;
-  }
-
-  .input {
-    background-color: var(--background-color);
-    border-radius: 0.6rem;
-    padding: 1.5rem;
-    font-size: 1.3rem !important;
-
-    margin-bottom: 1.8rem;
-    width: 100%;
-  }
-
-  .submit-button {
-    background-color: var(--primary-color);
-    width: 100%;
-    padding: 1.5rem;
-    border-radius: 0.8rem;
-    border: none;
-    color: var(--bg-color);
-    font-size: 1.3rem !important;
   }
 }
 @media (max-width: 700px) {

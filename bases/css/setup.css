@@ -8,8 +8,8 @@
   --secondary-color: #48504f;
   --secondary-color-dark: #383f3e;
 
-  --danger-color: #D26B6B;
-  --success-color: #6BD294;
+  --danger-color: #d26b6b;
+  --success-color: #6bd294;
 
   --text-font: "Arvo";
   --logo-font: "Yellowtail";
@@ -32,27 +32,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Scroll */
-body::-webkit-scrollbar {
-  width: 1.5rem;
-}
-
-body::-webkit-scrollbar-thumb {
-  background: #767696;
-  border-radius: 5rem;
-
-  height: 6px;
-  border: 0.4rem solid rgba(0, 0, 0, 0);
-  background-clip: padding-box;
-  border-radius: 1rem;
-
-  transition: background-color 0.3s;
-}
-body::-webkit-scrollbar-thumb:active {
-  background: #63637e;
-  background-clip: padding-box;
-}
-
 /* General */
 button {
   transition: filter 0.2s;
@@ -64,15 +43,12 @@ button.disabled {
 /* Tablet or mobile */
 @media (max-width: 900px) {
   :root {
-    font-size: 70%;
+    font-size: 85%;
   }
 }
 
 /* Desktop or tablet */
 @media (min-width: 700px) {
-  body::-webkit-scrollbar-track {
-    background: #adadd3;
-  }
 }
 
 @media (min-width: 1600px) {

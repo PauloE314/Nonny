@@ -1,55 +1,123 @@
 {% extends 'form_page.html' %}
+
+<!-- Static -->
 {% load static %}
 
+<!-- Links -->
 {% block links %}
-    <link rel="stylesheet" href="{% static 'css/form_page.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/sign_up.css' %}" />
+<link rel="stylesheet" href="{% static 'css/form_page.css' %}" />
+<link rel="stylesheet" href="{% static 'css/sign_up.css' %}" />
 {% endblock %}
 
-
+<!-- TItle -->
 {% block title %}Cadastro{% endblock %}
 
+<!-- Form -->
 {% block page_form %}
-<form id="sign-form" method="post">
+
+<!-- Error list -->
+{% if form.errors %}
+<div id="error-container" class="error-container">
+  <span class="error-message">Dados inválidos</span>
+</div>
+{% endif %}
+
+<form id="sign-form" method="post" enctype="multipart/form-data">
   {% csrf_token %}
   <label class="label" for="username">
-    Nome de usuário: *  <small>Deve conter pelo menos 5 caracteres</small>
+    <span>Nome de usuário:*</span>
+    {% if form.errors.username %}
+    <small class="error-message">{{form.errors.username.0}}</small>
+    {% else %}
+    <small>Deve conter pelo menos 5 caracteres sem espaço</small>
+    {% endif %}
   </label>
-  <input class="input" id="username" type="text" name="username" title="lorem" required pattern="^.{5,}$">
+  {% if form.errors.username %}
+  <input
+    id="username"
+    class="input error"
+    type="text"
+    name="username"
+    title="lorem"
+    required
+    pattern="^[\S]{5,}$"
+  />
+  {% else %}
+  <input
+    id="username"
+    class="input"
+    type="text"
+    name="username"
+    title="lorem"
+    pattern="^[\S]{0,}$"
+    required
+    autofocus
+  />
+  {% endif %}
 
-  <label class="label" for="fake-image">
-    Foto de perfil
-  </label>
+  <label class="label" for="fake-image"> Foto de perfil </label>
   <label id="fake-image" for="profile-image">
     <i class="fas fa-upload icon"></i>
-
   </label>
-  <input id="profile-image" type="file" name="image" accept="image/*" hidden>
+  <input id="profile-image" type="file" name="image" accept="image/*" hidden />
 
   <label class="label" for="password">
-    Senha: * <small>Deve conter pelo menos 4 caracteres incluindo números</small>
+    <span>Senha:*</span>
+    {% if form.errors.password2 %}
+    <small class="error-message">{{form.errors.password2.0 }}</small>
+    {% else %}
+    <small>Deve conter pelo menos 5 caracteres</small>
+    {% endif %}
   </label>
   <div class="password-row">
-    <input class="input" id="password" type="password" name="password" required pattern="^.{4,}$">
+    {% if form.errors.password2 %}
+    <input
+      class="input error"
+      id="password"
+      type="password"
+      name="password1"
+      required
+      pattern="^.{5,}$"
+    />
+    {% else %}
+    <input
+      class="input"
+      id="password"
+      type="password"
+      name="password1"
+      required
+      pattern="^.{5,}$"
+    />
+    {% endif %}
+
     <button id="see-password" type="button">
       <i class="fas fa-eye icon"></i>
     </button>
   </div>
 
-  <label class="label" for="confirm-password">
-    Confirmar senha: *
+  <label class="label" for="confirm-password"
+    ><span>Confirmar senha: *</span>
   </label>
   <div class="password-row">
-    <input class="input" id="confirm-password" type="password" name="password" required >
+    <input
+      class="input"
+      id="confirm-password"
+      type="password"
+      name="password2"
+      required
+    />
     <button id="see-confirm-password" type="button">
       <i class="fas fa-eye icon"></i>
     </button>
   </div>
-  
-  <button class="submit-button disabled" id="submit" type="submit" >Confirmar</button>
-</form>
-{% endblock %}
 
+  <button class="submit-button disabled" id="submit" type="submit">
+    Confirmar
+  </button>
+</form>
+<!-- {% endblock %} -->
+
+<!-- Scripts -->
 {% block scripts %}
-  <script src="{% static 'js/sign_up.js' %}"></script>
+<script src="{% static 'js/sign_up.js' %}"></script>
 {% endblock %}

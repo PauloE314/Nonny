@@ -5,41 +5,22 @@ const fakeImage = document.getElementById("fake-image");
 const password = document.getElementById("password");
 const confirmPassword = document.getElementById("confirm-password");
 
-const passwordRegex = new RegExp(password.getAttribute('pattern'));
-
 const showPassword = document.getElementById("see-password");
 const showConfirmPassword = document.getElementById("see-confirm-password");
 const submitButton = document.getElementById("submit");
 
-var isFormVality = false;
-
 function handleInputChange() {
-  // Checks form vality
   if (
     username.checkValidity() &&
-    password.value != '' &&
-    confirmPassword.value != '' &&
-    passwordRegex.test(password.value) &&
-    password.value == confirmPassword.value
+    password.value != "" &&
+    confirmPassword.value != ""
   ) {
-    password.setCustomValidity("");
-
     submitButton.classList.add("enabled");
-    submitButton.classList.remove('disabled');
-  }
-  
-  // Error case
-  else {
-     // Password logic
-     if (password.value !== confirmPassword.value) 
-      password.setCustomValidity("Senhas não coincidem");
-    else
-      password.setCustomValidity("");
-      
-    submitButton.classList.remove('enabled');
+    submitButton.classList.remove("disabled");
+  } else {
+    submitButton.classList.remove("enabled");
     submitButton.classList.add("disabled");
   }
-
 }
 
 function handleSeePassword(origin, target) {
@@ -79,7 +60,6 @@ function handleRemoveImage() {
     image.value = "";
   }, 200);
 }
-
 
 username.oninput = handleInputChange;
 password.oninput = handleInputChange;

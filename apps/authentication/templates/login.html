@@ -1,30 +1,53 @@
 {% extends 'form_page.html' %}
+
+<!-- Static -->
 {% load static %}
 
+<!-- Link list -->
 {% block links %}
-    <link rel="stylesheet" href="{% static 'css/form_page.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+<link rel="stylesheet" href="{% static 'css/form_page.css' %}" />
+<link rel="stylesheet" href="{% static 'css/login.css' %}" />
 {% endblock %}
 
-
+<!-- Title -->
 {% block title %}Login{% endblock %}
 
+<!-- Form -->
 {% block page_form %}
 
+<!-- Error list -->
 {% if form.errors %}
-  <div id="error-container" class="error-container">
-    <span class="error-message">Usuário ou senha inválidos</span>
-  </div>
+<div id="error-container" class="error-container">
+  <span class="error-message">Usuário ou senha inválidos</span>
+</div>
 {% endif %}
 
 <form id="login-form" method="post">
   {% csrf_token %}
-  <input class="input" id="username" type="text" name="username" required placeholder="Usuário">
-  <input class="input" id="password" type="password" name="password" required placeholder="Senha">
-  <button class="submit-button disabled" id="submit" type="submit" >Confirmar</button>
+  <input
+    class="input"
+    id="username"
+    type="text"
+    name="username"
+    required
+    placeholder="Usuário"
+    autofocus
+  />
+  <input
+    class="input"
+    id="password"
+    type="password"
+    name="password"
+    required
+    placeholder="Senha"
+  />
+  <button class="submit-button disabled" id="submit" type="submit">
+    Confirmar
+  </button>
 </form>
 {% endblock %}
 
+<!-- Additional data -->
 {% block additional %}
 <div id="footer-message">
   <span>Você é novo?</span>
@@ -32,6 +55,7 @@
 </div>
 {% endblock %}
 
+<!-- Script list -->
 {% block scripts %}
-  <script src="{% static 'js/login.js' %}"></script>
+<script src="{% static 'js/login.js' %}"></script>
 {% endblock %}
