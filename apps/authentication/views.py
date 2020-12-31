@@ -43,7 +43,7 @@ class SignUpView(View):
       user = User.objects.create(username=username, password=password)
       profileImage = ProfileImage.objects.create(user=user, image=image)
 
-      # login(request, user)
+      login(request, user)
 
       return redirect('/app')
     

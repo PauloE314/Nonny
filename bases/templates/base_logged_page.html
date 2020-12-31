@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+<!-- Static files -->
+{% load static %}
+
+<!-- Styles -->
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/base_logged_page.css' %}" />
+{% endblock %}
+
+<!-- Content -->
+{% block content %}
+<div id="logged-page">
+  <nav>Nonny</nav>
+  <div id="main-aside-container">
+    <aside>Aside</aside>
+    <main>Main</main>
+  </div>
+</div>
+{% endblock %}

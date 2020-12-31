@@ -16,7 +16,11 @@
     <link rel="stylesheet" href="{% static 'css/setup.css' %}" />
   </head>
   <body>
-    {% block content %}{% endblock %} {% block scripts %}{% endblock %}
+    <!-- Content -->
+    {% block content %}{% endblock %}
+
+    <!-- Scripts -->
+    {% block scripts %}{% endblock %}
     <script
       src="https://kit.fontawesome.com/86b9389f1a.js"
       crossorigin="anonymous"

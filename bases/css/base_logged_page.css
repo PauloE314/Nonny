@@ -1,0 +1,27 @@
+#logged-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#logged-page #main-aside-container {
+  display: flex;
+  flex: 1;
+}
+
+/* Navbar */
+#logged-page nav {
+  background-color: var(--primary-color);
+}
+
+/* Aside */
+#logged-page aside {
+  background-color: var(--bg-color);
+}
+
+/* Main data */
+#logged-page main {
+  background-color: var(--primary-color-dark);
+  width: 100%;
+}
